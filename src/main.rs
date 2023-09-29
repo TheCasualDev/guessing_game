@@ -17,7 +17,16 @@ fn main() { // the entry point of the program
             break;
         }
 
-        println!("Please input your guess. You have {attempts} attempts remaining");
+        if attempts == 1{
+
+            println!("Please input your guess. You have {attempts} attempt remaining");
+
+        } else {
+            
+            println!("Please input your guess. You have {attempts} attempts remaining");
+
+        }
+
 
         let mut guess = String::new(); // the let statement creates a variable, in this case we have created a string value called guess. (the mut tage makes it a mutable value, aka can be modified later on in the script)
 
