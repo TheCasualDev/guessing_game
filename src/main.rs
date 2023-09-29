@@ -4,7 +4,7 @@ use std::cmp::Ordering; // imports the the Ordering enum from the standard libra
 use rand::Rng; // imports the rng library from the rand cratte
 fn main() { // the entry point of the program
 
-    println!("\nGuess the number between 1 - 100 in 10 attempts, use [quit] to exit");
+    println!("\nGuess the number between 1 - 100 in 10 attempts, use [Ctrl + C] to exit");
     println!("-------------------------------------------------------------------\n");
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
