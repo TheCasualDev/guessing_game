@@ -1,7 +1,9 @@
 
 use std::io; // the 'use' statement imports the input/output library from the RUST standard library
 use std::cmp::Ordering; // imports the the Ordering enum from the standard library
-use rand::Rng; // imports the rng library from the rand cratte
+use rand::Rng; // imports the rng library from the rand crate
+use std::thread::sleep;
+use std::time::Duration;
 fn main() { // the entry point of the program
 
     println!("\nGuess the number between 1 - 100 in 10 attempts, use [Ctrl + C] to exit");
@@ -14,6 +16,7 @@ fn main() { // the entry point of the program
 
         if attempts == 0 {
             println!("You did not figure out the correct answear\nTHE ANSWEAR WAS: {secret_number}");
+            sleep(Duration::from_secs(5));  // used as a bandaid to stop the console instantly closing when running the exe directly
             break;
         }
 
@@ -49,6 +52,7 @@ fn main() { // the entry point of the program
             Ordering::Equal => {
                 attempts -= 1;
                 println!("🏆 YOU WIN!! with {attempts} attemps remaining");
+                sleep(Duration::from_secs(5)); // used as a bandaid to stop the console instantly closing when running the exe directly
                 break;} // ends loop if the correct number is gussed
 
         }
